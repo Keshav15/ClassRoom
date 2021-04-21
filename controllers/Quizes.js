@@ -12,8 +12,17 @@ exports.quiz=(req,res,next)=>{
     })
     quiz.save().then(result=>{
           return Class.findById(req.params.classroom);
-    }).then({
-        
+    }).then(classs=>{
+
+        classs.Quizs.push(quiz);
+        return classs.save();
+
+    }).then(result=>{
+        res.status(201).json({
+            message:"Quiz Created Successfully",
+            Quiz:quiz
+        })
+
     })
     
  
