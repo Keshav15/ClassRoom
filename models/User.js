@@ -21,13 +21,18 @@ const User=new Schema({
         type:String,
         // required:true
     },
-    createdClasses:{
-        type:mongoose.Types.ObjectId,
-    },
-    joinedClasses:{
-        type:mongoose.Types.ObjectId
-
-    }
+    createdClasses:[{
+        type:Schema.Type.ObjectId,
+        ref:"Class"
+    }],
+    joinedClasses:
+        [
+            {
+        type:Schema.Type.ObjectId,
+        ref:"Class"
+            }
+        ]
+    
     
     
 });

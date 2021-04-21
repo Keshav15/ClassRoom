@@ -35,12 +35,12 @@ const quizSchema = new Schema({
         required: true
     },
 
-    isEnabled: {
-        type: Boolean,
-        default: true
-    },
-
     questions: [questionSchema],
+
+    classroom:{
+     type:Schema.Types.ObjectId,
+     ref:'Class'
+    },
 
     duration :{
       hours : {

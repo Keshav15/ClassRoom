@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
-const { schema } = require('./Quiz')
 
-const user=require('../models/User');
+
+
 
 const ClassSchema = new mongoose.Schema({
 
@@ -13,21 +13,33 @@ minlength: 3
 
 batch:{
   type:String
-  },
+},
 
 subject:{
   type:String,
   required:true
 },
 
-quizzes:{
-  type:mongoose.Types.ObjectId
-},
 creator:{
   type:Schema.Types.ObjectId,
-  ref:"user"
+  ref:'user',
+  required:true
+
 
 },
+students:[
+    {
+      type:Schema.Types.ObjectId,
+      ref:'user'
+    }
+],
+
+Quizs:[{
+  type:Schema.Types.ObjectId,
+  ref:'Quiz'
+}]
+
+
 });
 
 const Class = mongoose.model('Class', ClassSchema)

@@ -3,7 +3,7 @@ const express=require("express");
 const { body }=require("express-validator/check");
 
 
-const classController=require('../controllers/Customer');
+const classController=require('../controllers/classes');
 const middleware = require("../middleware");
 
 
@@ -20,5 +20,7 @@ router.get("/getClass",middleware,classController.getClasslist);
 router.put("/updateClassDetails",middleware,classController.UpdateClass);
 
 router.get("/details",middleware,classController.getdetails);
+
+router.post("/createQuiz",middleware,classController.quiz);
 
 module.exports=router;

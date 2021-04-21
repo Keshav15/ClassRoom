@@ -11,6 +11,14 @@ const userRoute=require("./routes/register");
 
 app.use('/user',userRoute);
 
+const classRoute=require("./routes/create");
+
+const joinroute=require("./routes/join");
+
+app.use('/user/create',classRoute);
+
+app.use('/user/join',joinroute);
+
 app.use((error,req,res,next)=>{
     console.log(error);
     const status=error.statusCode || 500;
