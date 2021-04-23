@@ -7,11 +7,11 @@ exports.quiz=(req,res,next)=>{
     const quiz= new Quiz({
         name:req.body.name,
         instructions:req.body.instructions,
-        classroom:req.params.classroom
+        classroom:req.body.classroom
         
     })
     quiz.save().then(result=>{
-          return Class.findById(req.params.classroom);
+          return Class.findById(req.body.classroom);
     }).then(classs=>{
 
         classs.Quizs.push(quiz);

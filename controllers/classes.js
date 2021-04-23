@@ -40,3 +40,20 @@ exports.Class=(req,res,next)=>{
 
 }
 
+exports.getClasslist=(req,res,next)=>{
+    
+
+
+}
+
+exports.UpdateClass=(req,res,next)=>{
+    
+
+
+}
+exports.getdetails=(req,res,next)=>{
+    
+
+
+}
+

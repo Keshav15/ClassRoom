@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
 const Schema =mongoose.Schema;
-
+const Class=require('./Classroom')
 
 
 
@@ -22,13 +22,13 @@ const User=new Schema({
         // required:true
     },
     createdClasses:[{
-        type:Schema.Type.ObjectId,
+        type:Schema.Types.ObjectId,
         ref:"Class"
     }],
     joinedClasses:
         [
             {
-        type:Schema.Type.ObjectId,
+        type:Schema.Types.ObjectId,
         ref:"Class"
             }
         ]
