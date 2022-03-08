@@ -16,7 +16,7 @@ const questionSchema = new Schema({
     answers: [optionSchema],
 
     answer: {
-      type: Number,
+      type: String,
       required: true
     },
 
@@ -34,7 +34,7 @@ const quizSchema = new Schema({
         type: String,
         required: true
     },
-
+   
     questions: [questionSchema],
 
     classroom:{
@@ -63,6 +63,8 @@ const quizSchema = new Schema({
     timestamps: true
 });
 
-var Quizes = mongoose.model('Quiz', quizSchema);
+ Quizes = mongoose.model('Quizes', quizSchema);
+ ques=mongoose.model('ques',questionSchema);
+ opt=mongoose.model('opt',optionSchema);
 
-module.exports = Quizes;
+module.exports = {Quizes:Quizes,ques:ques,opt:opt}

@@ -30,8 +30,10 @@ exports.Class=(req,res,next)=>{
     }).then(result=>{
         res.status(201).json({
             message:'Class Created Successfully',
-            class:cla,
+            id:cla._id
         });
+
+
 
 
     })
@@ -40,20 +42,23 @@ exports.Class=(req,res,next)=>{
 
 }
 
-exports.getClasslist=(req,res,next)=>{
+exports.getClasslist=(req,res,next)=>{       
     
-
+const userId=req.userId;
+user.findById(userId).populate('createdClasses').then(user=>{
+    res.status(201).json({message:"Fetched",class:user.createdClasses})
+})
+    
 
 }
 
 exports.UpdateClass=(req,res,next)=>{
     
 
-
-}
-exports.getdetails=(req,res,next)=>{
     
 
-
 }
+
+
+
 

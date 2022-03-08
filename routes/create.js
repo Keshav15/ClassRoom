@@ -15,7 +15,7 @@ const router=express.Router();
 router.post("/createClass",middleware,classController.Class);
 
 
-
+router.get("/getQuizes",middleware,classController.getQuizes);
 router.get("/getClass",middleware,classController.getClasslist);
 
 router.put("/updateClassDetails",middleware,classController.UpdateClass);
